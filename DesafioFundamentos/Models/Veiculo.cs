@@ -7,10 +7,10 @@ namespace DesafioFundamentos.Models
 {
     public class Veiculo
     {
-        private string _marca;
-        private string _modelo;
-        private string _cor;
-        private string _placa;
+        private string _marca { get; }
+        private string _modelo { get; }
+        private string _cor { get; }
+        private string _placa { get; }
 
         public Veiculo(string marca, string modelo, string cor, string placa)
         {
