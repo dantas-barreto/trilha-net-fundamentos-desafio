@@ -6,6 +6,7 @@ namespace DesafioFundamentos.Models
     {
         private decimal precoInicial = 0;
         private decimal precoPorHora = 0;
+        Veiculo carro;
         private List<Veiculo> veiculos = new List<Veiculo>();
 
         public Estacionamento(decimal precoInicial, decimal precoPorHora)
@@ -27,7 +28,7 @@ namespace DesafioFundamentos.Models
             string placa = Console.ReadLine();
 
             // Criação do objeto
-            Veiculo carro = new Veiculo(marca, modelo, cor, placa);
+            carro = new Veiculo(marca, modelo, cor, placa);
 
             // Adição do objeto na lista
             veiculos.Add(carro);
@@ -38,12 +39,11 @@ namespace DesafioFundamentos.Models
             Console.WriteLine("Digite a placa do veículo para remover:");
 
             // Pedir para o usuário digitar a placa e armazenar na variável placa
-            string placa = Console.ReadLine();
+            string placa = Console.ReadLine().ToUpper();
 
             // Verifica se o veículo existe
-            if (veiculos.Any(x => x.ToUpper() == placa.ToUpper()))
+            if (carro.Placa == placa)
             {
-
                 int horas = 0;
                 decimal valorTotal = 0; 
 
@@ -52,9 +52,9 @@ namespace DesafioFundamentos.Models
                 
                 valorTotal = precoInicial + precoPorHora * horas;
 
-                //veiculos.Remove(placa);
+                veiculos.Remove(carro);
 
-                Console.WriteLine($"O veículo {placa} foi removido e o preço total foi de: R$ {valorTotal}");
+                Console.WriteLine($"O veículo {carro.Placa.ToUpper()} foi removido e o preço total foi de: R$ {valorTotal}");
             }
             else
             {
@@ -70,7 +70,7 @@ namespace DesafioFundamentos.Models
                 Console.WriteLine("Os veículos estacionados são:");
                 foreach (Veiculo item in veiculos)
                 {
-                    Console.WriteLine(item);
+                    item.ListaVeiculo();
                 }
             }
             else
