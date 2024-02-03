@@ -16,12 +16,16 @@ namespace DesafioFundamentos.Models
         public void AdicionarVeiculo()
         {
             // Inserção de informações do veículo
+            Console.Clear();
             Console.WriteLine("Marca do veículo:");
             string marca = Console.ReadLine();
+            Console.Clear();
             Console.WriteLine("Modelo do veículo:");
             string modelo = Console.ReadLine();
+            Console.Clear();
             Console.WriteLine("Cor do veículo:");
             string cor = Console.ReadLine();
+            Console.Clear();
             Console.WriteLine("Placa do veículo:");
             string placa = Console.ReadLine();
 
@@ -34,6 +38,7 @@ namespace DesafioFundamentos.Models
 
         public void RemoverVeiculo()
         {
+            Console.Clear();
             Console.WriteLine("Digite a placa do veículo para remover:");
 
             // Pedir para o usuário digitar a placa e armazenar na variável placa
@@ -62,6 +67,7 @@ namespace DesafioFundamentos.Models
 
         public void ListarVeiculos()
         {
+            Console.Clear();
             // Verifica se há veículos no estacionamento
             if (veiculos.Any())
             {
